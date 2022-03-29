@@ -86,6 +86,7 @@ namespace edu3
                             default:
                                 Console.WriteLine(ModelStatements.Invalid_statement);
                                 break;
+
                         }
                     }
                     catch (Exception e)

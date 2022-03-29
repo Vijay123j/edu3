@@ -21,6 +21,8 @@ namespace edu3
         public static List<Student> AllStudents = new List<Student>();
         public static List<Semester> Semesters = new List<Semester>();
         public static List<Subject> Subjects = new List<Subject>();
+
+        #region EnterStudentDetails method
         /// <summary>
         /// create a method to Enter the student details
         /// Taking inputs as student details from user and Validating them using validation methods declared in validation
@@ -158,7 +160,9 @@ namespace edu3
                                                 Subjectj.DMarks = Convert.ToDecimal(Subjectj.Marks);
                                                 //Add the Subject to the Subjects List
                                                 Subjects.Add(Subjectj);
-                                                ++WCount;
+                                            //Dictionary<String, Subject> DictSubject = Subjects.ToDictionary(Sub=> Semesti.SemNum, Sem => Semesteri);
+
+                                            ++WCount;
                                                 Console.WriteLine("\n\tDetails of the Subject of Semester{0} of the student updated succesfully",Semesteri.SemNum);
                                                 Console.WriteLine(ModelStatements.Adding_Subj_continue_close_staement, i);
                                                 if (Console.ReadLine() != "n") EndAddingAcaDet = true;
@@ -172,7 +176,10 @@ namespace edu3
                                             goto Restart_Num_Subj;
                                         }
                                     //Add Semester to the Semesters List
+
                                     Semesters.Add(Semesteri);
+                                    //Dictionary<int, Semester> DictSemester = Semesters.ToDictionary(Sem => Semesteri.SemNum, Sem => Semesteri);
+
                                         Console.WriteLine("\n\tDetails of all the subjects in Semester{0} added Successfully", i);
                                     }
                                 }
@@ -190,6 +197,7 @@ namespace edu3
                         }
                 //Add student to the All Students List
                 AllStudents.Add(Studenti);
+                  //Dictionary<string, Student> DictStudents = AllStudents.ToDictionary(Std => Studenti.ID, Std => Studenti);
                 }
                 catch (Exception ee)
                 {
@@ -202,8 +210,8 @@ namespace edu3
                 Console.WriteLine("\n");
             }
         }
-      
-
+        #endregion
+        #region GetStudentDetails Method
         /// <summary>
         ///Creating a method to Get student details
         ///switch statement-based on type of information user wants to access
@@ -478,10 +486,14 @@ namespace edu3
                 if (Console.ReadLine() != "n") EndGetting = true;
                 Console.WriteLine("\n");
             }
-        }/// <summary>
+        }
+        #endregion
+        #region GetResults Method
+        /// <summary>
         /// Method to Get the academic details of the students
         /// Display the Marks obtained and Result
         /// </summary>
+
         public static void GetResults()
         {
             bool EndGetResults = false;
@@ -503,8 +515,10 @@ namespace edu3
                                 foreach (Student s in AllStudents)
                                 {
                                     Console.WriteLine("Name:{0}     ID:{1}", s.Name, s.ID);
+                                    List<Semester> semis = Semesters.FindAll(se=>se.SemNum);
                                     foreach(Semester Sem in Semesters)
                                     {
+                                        
                                         Console.WriteLine(Sem.SemNum);
                                         {
                                             foreach(Subject sub in Subjects)
@@ -602,15 +616,19 @@ namespace edu3
                 Console.WriteLine("\n");
             }
         }
+        #endregion
+        #region SemTotal Method
         public static decimal SemTotal(decimal[] arr1)
         {
             decimal total = 0;
             for (int l = 0; l < arr1.Length; l++)
-
                 total += arr1[l];
             return total;
 
         }
+        #endregion
+
+        #region DeleteStudent Method
         /// <summary>
         /// Method to delete the student from the list
         /// user can delete a student based on information he possess(Name or ID)
@@ -706,6 +724,7 @@ namespace edu3
                 if (Console.ReadLine() != "n") EndDelete = true;
                 Console.WriteLine("\n");
             }
-        }    
+        }
+        #endregion
     }
 }

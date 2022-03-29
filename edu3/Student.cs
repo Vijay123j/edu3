@@ -9,10 +9,10 @@ namespace edu3
     public class Student
     {
         //declaration and Implimentation of Student properties
-        public String Name { get; set; }
-        public String ID { get; set; }
-        public String Branch { get; set; }
-        public String Gender { get; set; }
+        public string Name { get; set; }
+        public string ID { get; set; }
+        public string Branch { get; set; }
+        public string Gender { get; set; }
         public List<Semester> Semesters { get; set; }
         //Student class's inner semester class
 
@@ -24,13 +24,18 @@ namespace edu3
         public List<Subject> Subjects { get; set; }
         public int SubCount { get; set; }
         public decimal SemResult { get; set; }
+
+        public static explicit operator Semester(List<Semester> v)
+        {
+            throw new NotImplementedException();
+        }
         //Semester class's inner Subject class
 
     }
 
     public class Subject
     {
-        public String SubName;
+        public string SubName;
         public string Marks;
         public decimal DMarks { get; set; }
     }
