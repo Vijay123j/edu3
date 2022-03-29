@@ -19,8 +19,7 @@ namespace edu3
         /// Declare a list of type students 
         /// </summary>
         public static List<Student> AllStudents = new List<Student>();
-        public static List<Semester> Semesters = new List<Semester>();
-        public static List<Subject> Subjects = new List<Subject>();
+  
 
         #region EnterStudentDetails method
         /// <summary>
@@ -37,6 +36,8 @@ namespace edu3
                 {
                     //creating instance of student class and validation class
                     Student Studenti = new Student();
+                    Studenti.Semesters = new List<Semester>();
+
                     Validation re = new Validation();
 
 
@@ -106,8 +107,10 @@ namespace edu3
                         {
                             int CurSem;
                         Restart_Cur_Sem:
-                            try
-                            {
+                        List<Semester> Semesters = new List<Semester>();
+
+                        try
+                        {
                                 //User Input for Students current Semester
                                 Console.WriteLine(ModelStatements.Enter_Cur_sem);
                                 CurSem = int.Parse(Console.ReadLine());
@@ -118,9 +121,12 @@ namespace edu3
                                     {
                                     //new Semester referance variable
                                     Semester Semesteri = new Semester();
+                                    Semesteri.Subjects = new List<Subject>();
                                     //Assign Semester Number as its Unique property
                                     Semesteri.SemNum = i;
-                                    Restart_Num_Subj:
+                                Restart_Num_Subj:
+                                    List<Subject> Subjects = new List<Subject>();
+                                    
                                         try
                                         {
                                             bool EndAddingAcaDet = false;
@@ -130,6 +136,7 @@ namespace edu3
                                             restartSubName:
                                                 //New Subject referance Variable
                                                 Subject Subjectj = new Subject();
+                                           
                                                 Console.WriteLine(ModelStatements.Enter_SubjName, i);
                                                 Subjectj.SubName = Console.ReadLine().Trim();
                                                 //Checking For Duplicate Name Entry
@@ -165,23 +172,27 @@ namespace edu3
                                             ++WCount;
                                                 Console.WriteLine("\n\tDetails of the Subject of Semester{0} of the student updated succesfully",Semesteri.SemNum);
                                                 Console.WriteLine(ModelStatements.Adding_Subj_continue_close_staement, i);
-                                                if (Console.ReadLine() != "n") EndAddingAcaDet = true;
+                                                if (Console.ReadLine()!= "n") EndAddingAcaDet = true;
                                                 Console.WriteLine("\n");
                                             }
                                             Semesteri.SubCount = WCount;
+                                            Semesteri.Subjects.AddRange(Subjects);
+
                                         }
                                         catch (Exception eS)
                                         {
                                             Console.WriteLine(ModelStatements.Exception_Statement, eS.Message);
                                             goto Restart_Num_Subj;
                                         }
-                                    //Add Semester to the Semesters List
+                                    //Add Semester to the Semesters List1
 
                                     Semesters.Add(Semesteri);
+
                                     //Dictionary<int, Semester> DictSemester = Semesters.ToDictionary(Sem => Semesteri.SemNum, Sem => Semesteri);
 
                                         Console.WriteLine("\n\tDetails of all the subjects in Semester{0} added Successfully", i);
                                     }
+                                    Studenti.Semesters.AddRange(Semesters);
                                 }
                                 else
                                 {
@@ -515,86 +526,23 @@ namespace edu3
                                 foreach (Student s in AllStudents)
                                 {
                                     Console.WriteLine("Name:{0}     ID:{1}", s.Name, s.ID);
-                                    List<Semester> semis = Semesters.FindAll(se=>se.SemNum);
-                                    foreach(Semester Sem in Semesters)
+                                    //List<Semester> semis = Semesters.FindAll(se=>se.SemNum);
+                                    foreach(Semester Sem in s.Semesters)
                                     {
                                         
-                                        Console.WriteLine(Sem.SemNum);
+                                        Console.WriteLine("Semester={0}",Sem.SemNum);
                                         {
-                                            foreach(Subject sub in Subjects)
+                                            foreach(Subject sub in Sem.Subjects)
                                             {
-                                                Console.WriteLine("Name:{0}     ID:{1}", sub.SubName, sub.DMarks);
+                                                Console.WriteLine("Subject Name:{0}     Marks:{1}", sub.SubName, sub.DMarks);
 
                                             }
                                         }
                                     }
-                                    //List<Student> STL = AllStudents.FindAll(Std => Std.Name == s.Name);
-                                    //string sname = s.Name;
-                                    //var a = 0;
-                                    //while (i < Semesters.Count)
-                                    //{
-                                    //    Semester Semi = Semesters[i];
-                                    //    int x = Semi.SemNum;
-                                    //    decimal[] SemMarksArr = new decimal[Semi.SubCount];
-                                    //    int ith_Arr = 0;
-                                    //    {
-
-                                    //        if (x == a || a > x)
-                                    //        {
-                                    //            a = x;
-
-                                    //            break;
-                                    //        }
-                                    //        else if (a == 0)
-                                    //        {
-                                    //            Console.WriteLine("Semester:{0}", Semi.SemNum);
-                                    //            int Y = Semi.SubCount;
-                                    //            for (int k = j; k < Y + j; k++)
-                                    //            {
-                                    //                Subject Sub = Subjects[k];
-                                    //                Console.WriteLine("Subject Name:{0}     Marks:{1}", Sub.SubName, Sub.DMarks);
-                                    //                SemMarksArr[ith_Arr] = Sub.DMarks;
-                                    //                ith_Arr++;
-                                    //            }
-                                    //            j = j + Y;
-                                    //            a = x;
-                                    //            ++i;
-                                    //        }
-                                    //        else
-                                    //        {
-                                    //            Console.WriteLine("Semester:{0}", Semi.SemNum);
-                                    //            int Y = Semi.SubCount;
-                                    //            for (int k = j; k < Y + j; k++)
-                                    //            {
-                                    //                Subject Sub = Subjects[k];
-                                    //                Console.WriteLine("Subject Name:{0}     Marks:{1}", Sub.SubName, Sub.DMarks);
-                                                    //SemMarksArr[ith_Arr] = Sub.DMarks;
-                                        //            ith_Arr++;
-                                        //        }
-                                        //        j = j + Y;
-                                        //        a = x;
-                                        //        ++i;
-                                        //    }
-                                        ////}
-                                        //Console.WriteLine("The Semester Result of the Semester{0} = {1:##.00}", Semi.SemNum, SemTotal(SemMarksArr) / Semi.SubCount);
-                                        //int count = 0;
-                                        //for (int P = 0;P<SemMarksArr.Length; P++)
-                                        //{
-                                        //    if (SemMarksArr[P]<35)
-                                        //    {
-                                        //        count++;
-                                        //        Console.WriteLine("Status:Failed");
-                                        //        break;
-                                        //    }
-                                        //}
-                                        //if(count==0)
-                                        //{
-                                        //    Console.WriteLine("Status:Passed");
-                                        //}
-                                        
-                                }
                                     Console.WriteLine("************************************************************");
-                                
+
+                                }
+
                             }
                             else
                             {

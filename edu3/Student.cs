@@ -24,11 +24,6 @@ namespace edu3
         public List<Subject> Subjects { get; set; }
         public int SubCount { get; set; }
         public decimal SemResult { get; set; }
-
-        public static explicit operator Semester(List<Semester> v)
-        {
-            throw new NotImplementedException();
-        }
         //Semester class's inner Subject class
 
     }
