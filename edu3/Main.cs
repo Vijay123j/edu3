@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using edu3;
-
 namespace edu3
 {
     //startup class-containing main method
@@ -83,6 +79,40 @@ namespace edu3
                                     }
                                 
                                     break;
+                            case 5:
+                                try
+                                {
+                                    StudentOperation.EnterFeesDetails();
+                                }
+                                catch (Exception eee)
+                                {
+                                    Console.WriteLine(ModelStatements.Exception_Statement, eee.Message);
+
+                                }
+                                break;
+                            case 6:
+                                try
+                                {
+                                    StudentOperation.GetScholarship();
+                                }
+                                catch (Exception eee)
+                                {
+                                    Console.WriteLine(ModelStatements.Exception_Statement, eee.Message);
+
+                                }
+                                break;
+                            case 7:
+                                try
+                                {
+                                    StudentOperation.GetFeesDetails();
+                                }
+                                catch (Exception eee)
+                                {
+                                    Console.WriteLine(ModelStatements.Exception_Statement, eee.Message);
+
+                                }
+
+                                break;
                             default:
                                 Console.WriteLine(ModelStatements.Invalid_statement);
                                 break;
