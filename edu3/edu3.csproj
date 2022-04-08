@@ -35,11 +35,11 @@
     <Compile Include="StudentOperation.cs" />
     <Compile Include="ModelStatements.cs" />
     <Compile Include="Validation.cs" />
-    <Compile Include="Main.cs" />
     <Compile Include="Semester.cs" />
     <Compile Include="Subject.cs" />
     <Compile Include="Fees.cs" />
     <Compile Include="ScholarShip.cs" />
+    <Compile Include="Main.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

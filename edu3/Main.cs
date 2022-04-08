@@ -38,19 +38,18 @@ namespace edu3
                                 }
                                 break;
                             case 2:
-                                bool End2 = false;
-                                while (!End2)
-                                {
                                     try
                                     {
-                                        StudentOperation.GetStudentDetails();
-                                        End2 = true;
+                                        //StudentOperation.GetStudentDetails();
+                                        StudentOperation.EnterAcademic_Details();
+
+                                       
                                     }
                                     catch (Exception ee)
                                     {
                                         Console.WriteLine(ModelStatements.Exception_Statement, ee.Message);
                                     }
-                                }
+                                
                                 break;
                             case 3:
                                 bool End3 = false;
@@ -58,7 +57,8 @@ namespace edu3
                                 {
                                     try
                                     {
-                                        StudentOperation.DeleteStudent();
+                                        StudentOperation.EnterFeesDetails();
+
                                         End3 = true;
                                     }
                                     catch (Exception e)
@@ -70,7 +70,7 @@ namespace edu3
                             case 4:                                                               
                                     try
                                     {
-                                        StudentOperation.GetResults();
+                                        StudentOperation.GetStudentDetails();
                                     }
                                     catch (Exception eee)
                                     {
@@ -82,7 +82,7 @@ namespace edu3
                             case 5:
                                 try
                                 {
-                                    StudentOperation.EnterFeesDetails();
+                                    StudentOperation.GetResults();
                                 }
                                 catch (Exception eee)
                                 {
@@ -93,7 +93,7 @@ namespace edu3
                             case 6:
                                 try
                                 {
-                                    StudentOperation.GetScholarship();
+                                    StudentOperation.GetFeesDetails();
                                 }
                                 catch (Exception eee)
                                 {
@@ -104,7 +104,18 @@ namespace edu3
                             case 7:
                                 try
                                 {
-                                    StudentOperation.GetFeesDetails();
+                                    StudentOperation.GetScholarship();
+                                }
+                                catch (Exception eee)
+                                {
+                                    Console.WriteLine(ModelStatements.Exception_Statement, eee.Message);
+
+                                }
+                                break;
+                            case 8:
+                                try
+                                {
+                                    StudentOperation.DeleteStudent();
                                 }
                                 catch (Exception eee)
                                 {
@@ -119,9 +130,9 @@ namespace edu3
 
                         }
                     }
-                    catch (Exception e)
+                    catch
                     {
-                        Console.WriteLine(ModelStatements.Exception_Statement, e.Message);
+                        Console.WriteLine(ModelStatements.Invalid_statement);
                     }
                 } while (UserChoice1 != 1 && UserChoice1 != 2 && UserChoice1 != 3);
                 //User Choice to Close the application or to continue

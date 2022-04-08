@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.810.19
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "edu3", "edu3\edu3.csproj", "{16B8904E-0337-4151-9D5F-936B513CA63E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FBE9D2F3-8CC9-4FE4-A24A-880AE930A0EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|anycpu = Debug|anycpu

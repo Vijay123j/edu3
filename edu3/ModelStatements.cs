@@ -10,7 +10,7 @@ namespace edu3
         public static string Greet1 = "Welcome....!";
         public static string Greet2 = "Thank You....!";
 
-        public static string Student_Opertaion_userChoice_statement = "Please press \n\t1-Enter students details\n\t2-Get students details\n\t3-Remove student\n\t4-Get Results\n\t5-Enter Fees Details\n\t6-Get Scholarship details\n\t7-Get Fees details";
+        public static string Student_Opertaion_userChoice_statement = "Please press \n\t1-Enter students details\n\t2-Enter student's Academic details\n\t3-Enter student's fees details\n\t4-Get students Personal details \n\t5-Get students Academic details\n\t6-Get students Fees details\n\t7-Get Students Scholarship details\n\t8-To Delete Student";
         public static string Enter_DetailType_userChoice_statement = "Please press \n\t1-Enter students Personal details\n\t2-Enter Students Academic Details";
         public static string Adding_std_continue_close_staement = "\n\tIf you prefer to continue adding another student's details press-> n and Enter \n\tOR ELSE\n\tPress->any other key and Enter";
         public static string Adding_stdPerDet_continue_close_staement = "\n\tIf you prefer to continue adding another student's personal details press-> n and Enter \n\tOR ELSE\n\tPress->any other key and Enter";
@@ -34,6 +34,7 @@ namespace edu3
         public static string Res_Get_Name_ID_continue_close_statement = "\n\tIf you prefer to continue getting results of particular student based on Name OR ID press-> n and Enter \n\tOR ELSE\n\tPress->any other key and Enter";
         public static string Fees_Get_Gen_std_continue_close_statement = "\n\tIf you prefer to continue getting student's Fee details of particular gender press-> n and Enter \n\tOR ELSE\n\tPress->any other key and Enter";
         public static string Fees_Get_Name_ID_continue_close_statement = "\n\tIf you prefer to continue getting Fee details of particular student based on Name OR ID press-> n and Enter \n\tOR ELSE\n\tPress->any other key and Enter";
+        public static string Sch_Get_MVS_Merit_continue_close_statement = "\n\tIf you prefer to continue getting Scholarship details of students press-> n and Enter \n\tOR ELSE\n\tPress->any other key and Enter";
 
         public static string Get_Branch_std_continue_close_statement = "\n\tIf you prefer to continue getting details of student's of a particular branch press-> n and Enter \n\tOR ELSE\n\tPress->any other key and Enter";
         public static string Duplicate_Name_Entry = "\n\tThe entered Name is already assigned to a student in the list\n\tPlease try a different Name";
@@ -45,10 +46,13 @@ namespace edu3
         public static string Res_Get_Branch_std_continue_close_statement = "\n\tIf you prefer to continue getting Results of student's of a particular branch press-> n and Enter \n\tOR ELSE\n\tPress->any other key and Enter";
         public static string Fees_Get_std_Userchoice_statement = "Enter \n\t1- Fees Details of all the students \n\t2-Fees Details of students of particular gender\n\t3-Fees Details students of a particular Branch\n\t4-Fees Details of a particular student ";
         public static string Fees_Get_Branch_std_continue_close_statement = "\n\tIf you prefer to continue getting Fees details of student's of a particular branch press-> n and Enter \n\tOR ELSE\n\tPress->any other key and Enter";
-        public static string Get_Fees_continue_close_statement = "\n\tPress-> n and Enter ->if you prefer to continue getting student's Fees details   \n\tOR ELSE\n\tTo quit getting students results Press->any other key and Enter";
+        public static string Get_Fees_continue_close_statement = "\n\tPress-> n and Enter ->if you prefer to continue getting student's Fees details   \n\tOR ELSE\n\tTo quit getting students Fees details Press->any other key and Enter";
         public static string Res_Searchby_Name_Or_ID_statement= "Enter \n\t1- to get the result of the student using search by Name\n\t2-to get Result of the student using search by ID";
         public static string Exception_Statement = "\tAn Exception has occured:{0}\n\tPlease Enter Valid input";
-        
+        public static string Enter_Academic_continue_close_statement = "\n\tPress-> n and Enter ->if you prefer to continue Enter Student's Academic details \n\tOR ELSE\n\tTo quit Press->any other key and Enter";
+        public static string Enter_Fees_continue_close_statement = "\n\tPress-> n and Enter ->if you prefer to continue Enter Student's Fees details \n\tOR ELSE\n\tTo quit Press->any other key and Enter";
+
+
         public static string Enter_Name = "\tEnter Name of the student";
         public static string Enter_ID = "\tEnter ID of the student";
         public static string Enter_Branch = "\tEnter Branch of the student";
@@ -81,6 +85,7 @@ namespace edu3
         public static string Searchby_Name_Or_ID_statement = "Enter \n\t1- to get details using search by Name\n\t2-to get details using search by ID";
         public static string Fees_Searchby_Name_Or_ID_statement = "Enter \n\t1- to Enter the Fee details of the student using search by Name\n\t2-to Enter the Fee details of the student using search by ID";
         public static string Get_Fees_Searchby_Name_Or_ID_statement = "Enter \n\t1- to get the Fee details of the student using search by Name\n\t2-to get the Fee details of the student using search by ID";
+        public static string Aca_Searchby_Name_Or_ID_statement = "Enter \n\t1- to Enter the Academic details of the student using search by Name\n\t2-to Enter the Academic details of the student using search by ID";
 
         public static string Branch_choice_statement2 = "Enter \n\t1-for Mechanical Department students Details\n\t2- for Electronics department student Details\n\t3-for Computer Science Deparment student details";
         public static string Res_Branch_choice_statement2 = "Enter \n\t1-for Mechanical Department students Results\n\t2- for Electronics department student Results\n\t3-for Computer Science Deparment student Results";
@@ -90,8 +95,9 @@ namespace edu3
         public static string Duplicate_ID_Entry = "\n\tThe entered ID is already assigned to a student in the list\n\tPlease try a different ID";
         public static string Duplicate_SubName_Entry = "\n\tThe entered Subject is matching your Previous Subject entry\n\tPlease Enter other Subject of the semester";
 
+        public static string No_Student = "\n\tThere is no student with your Input Name or ID";
         public static string No_Student_Name = "\n\tThere is no student with Name:{0}";
-        public static string No_Student_ID = "\n\tThere is no student with Name:{0}";
+        public static string No_Student_ID = "\n\tThere is no student with ID:{0}";
         public static string No_Student_CSE = "\n\tThere is no student belonging to computer science engineering department in the list";
         public static string No_Student_ME = "\n\tThere is no student belonging to mechanical engineering department in the list";
         public static string No_Student_ECE = "\n\tThere is no student belonging to electronics and communication engineering department in the list";
@@ -99,6 +105,7 @@ namespace edu3
         public static string No_Student_Female = "\n\tThere are no Female Students";
         public static string No_Student_MVSL = "\n\tNo Student in the list is eligible for Mahila_Vidhyarthi_Scholarship";
         public static string No_Student_Merit = "\n\tNo Student in the list is eligible for Merit Schoalarship";
+        public static string No_Student_AllStudents = "\n\tThere is No Student in the list";
 
 
     }

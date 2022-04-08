@@ -15,7 +15,6 @@ namespace edu3
 
         public decimal Overall_due;
 
-
         public ScholarShip Scholarships;
 
     }
