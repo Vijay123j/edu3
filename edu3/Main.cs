@@ -38,17 +38,20 @@ namespace edu3
                                 }
                                 break;
                             case 2:
+                                bool End2 = false;
+                                while (!End2)
+                                {
                                     try
                                     {
                                         //StudentOperation.GetStudentDetails();
                                         StudentOperation.EnterAcademic_Details();
-
-                                       
+                                        End2 = true;
                                     }
                                     catch (Exception ee)
                                     {
                                         Console.WriteLine(ModelStatements.Exception_Statement, ee.Message);
                                     }
+                                }
                                 
                                 break;
                             case 3:
@@ -58,7 +61,6 @@ namespace edu3
                                     try
                                     {
                                         StudentOperation.EnterFeesDetails();
-
                                         End3 = true;
                                     }
                                     catch (Exception e)
@@ -67,10 +69,14 @@ namespace edu3
                                     }
                                 }
                                 break;
-                            case 4:                                                               
+                            case 4:
+                                bool End4 = false;
+                                while(!End4)
                                     try
                                     {
                                         StudentOperation.GetStudentDetails();
+                                        End4 = true;
+                                          
                                     }
                                     catch (Exception eee)
                                     {
@@ -80,47 +86,65 @@ namespace edu3
                                 
                                     break;
                             case 5:
-                                try
+                                bool End5 = false;
+                                while (!End5)
                                 {
-                                    StudentOperation.GetResults();
-                                }
-                                catch (Exception eee)
-                                {
-                                    Console.WriteLine(ModelStatements.Exception_Statement, eee.Message);
+                                    try
+                                    {
+                                        StudentOperation.GetResults();
+                                        End5 = true;
+                                    }
+                                    catch (Exception eee)
+                                    {
+                                        Console.WriteLine(ModelStatements.Exception_Statement, eee.Message);
 
+                                    }
                                 }
                                 break;
                             case 6:
-                                try
+                                bool End6 = false;
+                                while (!End6)
                                 {
-                                    StudentOperation.GetFeesDetails();
-                                }
-                                catch (Exception eee)
-                                {
-                                    Console.WriteLine(ModelStatements.Exception_Statement, eee.Message);
+                                    try
+                                    {
+                                        StudentOperation.GetFeesDetails();
+                                        End6 = true;
+                                    }
+                                    catch (Exception eee)
+                                    {
+                                        Console.WriteLine(ModelStatements.Exception_Statement, eee.Message);
 
+                                    }
                                 }
                                 break;
                             case 7:
-                                try
+                                bool End7 = false;
+                                while (!End7)
                                 {
-                                    StudentOperation.GetScholarship();
-                                }
-                                catch (Exception eee)
-                                {
-                                    Console.WriteLine(ModelStatements.Exception_Statement, eee.Message);
-
+                                    try
+                                    {
+                                        StudentOperation.GetScholarship();
+                                        End4 = true;
+                                    }
+                                    catch (Exception eee)
+                                    {
+                                        Console.WriteLine(ModelStatements.Exception_Statement, eee.Message);
+                                    }
                                 }
                                 break;
                             case 8:
-                                try
+                                bool End8 = false;
+                                while (!End8)
                                 {
-                                    StudentOperation.DeleteStudent();
-                                }
-                                catch (Exception eee)
-                                {
-                                    Console.WriteLine(ModelStatements.Exception_Statement, eee.Message);
-
+                                    try
+                                    {
+                                        StudentOperation.DeleteStudent();
+                                        End4 = true;
+                                    }
+                                    catch (Exception eee)
+                                    {
+                                        Console.WriteLine(ModelStatements.Exception_Statement, eee.Message);
+                                    }
                                 }
 
                                 break;
